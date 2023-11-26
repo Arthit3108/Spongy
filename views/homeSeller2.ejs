@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seller</title>
+  <link rel="stylesheet" href="/homeSeller.css">
+  <link rel="stylesheet" href="/global.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Prompt:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&family=Sarabun:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="selleradd">
+    <img class="home-1-1" alt="" src="/image/home.png" />
+
+    <b class="b"><%= UserSellerData.storename %></b>
+    <div class="select">
+      <b class="b1">เพิ่มสินค้า</b>
+      <div class="select-button">
+        <div class="rectangle-parent">
+          <div class="group-child">
+            <a href="addFood/<%= UserSellerData._id %>" class="food">อาหาร</a>
+          </div>
+        </div>
+        <div class="rectangle-group">
+          <div class="group-item">
+            <a href="addProduct/<%= UserSellerData._id %>" class="ingredient">วัตถุดิบ</a>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="product">
+      <b class="b3">สินค้ารอยืนยัน</b>
+      <div class="product1">
+        <div class="rectangle-container"  >
+        <% if (product) { %>
+        <% product.forEach((row, index)=> { %>
+            <div class="group-inner">
+            <div class="product-child"><img src="/uploads/<%= row.imageProduct %>" id="image-product"></div>
+            <div class="b-20-container">
+                <p  id="flash-sale"><%= row.normalPrice %></p>
+                <div class="show-detail">
+                  <p class="detail-product"><%= row.foodname %></p>
+                  <p class="detail-product"><%= row.normalPrice - row.discountedPrice %></p>
+                </div>
+                <div class="show-detail">
+                  <p class="detail-product"  id="stock">จำนวน</p>
+                  <p class="detail-product"  id="stock"><%= row.stock %></p>
+                </div>    
+            </div>
+            </div>
+        <% }) %>
+        <% } else { %>
+          <p>Not Have Product in Your Store</p>
+        <% }%>
+        </div>
+
+      </div>
+    </div>
+    <div class="normal-product">
+      <b class="b4">สินค้าปัจจุบัน</b>
+      <div class="product2">
+        <div class="rectangle-container"  >
+        <% if (food) { %>
+        <% food.forEach((row, index)=> { %>
+
+            <div class="group-inner">
+            <div class="product-child"><img src="/uploads/<%= row.imageProduct %>" id="image-product"></div>
+            <div class="b-20-container">
+
+                <div class="show-detail">
+                  <p class="detail-product"><%= row.foodname %></p>
+                  <p class="detail-product"><%= row.normalPrice %></p>
+                </div>
+                <div class="show-detail">
+                  <p class="detail-product">จำนวน</p>
+                  <p class="detail-product"><%= row.stock %></p>
+                </div>
+            </div>
+            </div>
+
+
+        <% }) %>
+
+        <% } else { %>
+
+        <% }%>
+        </div>
+
+      </div>
+    </div>
+    <div class="review">
+
+      <b class="b10">รีวิวร้านค้า</b>
+      <div class="review-item"></div>
+      <div class="review-inner"></div>
+      <div class="review-child1"></div>
+    </div>
+  </div>
+</body>
+
+</html>

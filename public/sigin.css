@@ -1,0 +1,69 @@
+body {
+    background-color: #F26D3D;
+    color: white;
+}
+
+.form-floating {
+    /* background-color: red; */
+    color: blue;
+    display: flex;
+    justify-content: center;
+}
+
+.form-control {
+    background-color: #2E2929;
+    border: none;
+    border-radius: 20rem;
+    margin: 10px;
+    padding: 20px;
+    color: white;
+}
+ 
+.head {
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: 5px;
+    font-size: 42px;
+}
+
+.check_box {
+    color: #EFE5D8;
+    display: flex;
+    justify-content: center;
+}
+
+.button_1 {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    
+}
+
+.waring-login-seller {
+    
+    color: #EFE5D8;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+}
+
+button {
+    font-size: 35px;
+}
+
+.btn {
+    border: none;
+    border-radius: 20rem;
+    width: 100px;
+    height: 50px;
+}
+
+.form-signin {
+    /* background-color: blueviolet; */
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    justify-content: center;
+}

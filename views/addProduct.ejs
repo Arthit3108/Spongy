@@ -1,0 +1,154 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Blog Template · Bootstrap v5.0</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/blog/">
+    <link rel="stylesheet" href="/addPro.css">
+    <!-- <link rel="stylesheet" href="/homeSeller.css"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Prompt:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&family=Sarabun:wght@400;500;600&display=swap" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&family=Inter:wght@300&display=swap" rel="stylesheet">
+
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="/css/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">
+<meta name="theme-color" content="#7952b3">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <!-- <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style> -->
+
+    
+    <!-- Custom styles for this template -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet"> -->
+    <!-- Custom styles for this template -->
+    <!-- <link href="/css/blog.css" rel="stylesheet"> -->
+  </head>
+  <body>
+    
+<!-- <div class="container">
+  <header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        <a class="link-secondary" href="#" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+        </a>
+        <% if (loggedIn) { %>
+          <a class="btn btn-sm btn-danger" href="/logout">LogOut</a>
+        <% } %>
+
+        <% if (!loggedIn) { %>
+          <a class="btn btn-sm btn-outline-secondary mx-3"  href="/login">Sign In</a>
+          <a class="btn btn-sm btn-success" href="/register">Sign Up</a>
+        <% } %>
+      </div>
+    </div>
+  </header>
+</div> -->
+
+<div class="container">
+    <div class="header">
+      <img src="/image/home.png" class="home">
+      <p style="margin: 30px;">เพิ่มรายละเอียดวัตถุดิบ</p>
+      <!-- <h3>User ID <%= UserSellerData._id  %></h3> -->
+    </div>
+    <form action='/seller/addproduct/<%= UserSellerData._id %>' method="POST" enctype="multipart/form-data">
+        <div class="food">
+          <div class="form-add-product">
+            <div for="floatingStore">ชื่ออาหาร</div>
+            <input type="text" name="foodname" class="form-control" id="floatingfood" placeholder="" required>
+            <!-- <div >บาท</div>  -->
+          </div>
+        </div>
+
+          <div class="number">
+            <div class="form-add-product">
+              <label for="floatingnormal">ราคา (บาท)</label>
+              <input type="number" name="normalPrice" class="form-control" id="floatingnormal" placeholder="" required>
+              <!-- <label for="">บาท</label> -->
+            </div>
+          </div>
+
+          <div class="discount">
+            <div class="form-add-product">
+              <label for="floatingdiscounted">ราคาที่ลด (บาท)</label>
+              <input type="number" name="discountedPrice" class="form-control" id="floatingdiscounted" placeholder="" required>
+            </div>
+          </div>
+
+       
+            <div class="form-add-product">
+              <label for="catagory-add-product">ประเภท</label>
+              <select name="category" id="catagory-add-product">
+                  <!-- <option value=""></option> -->
+                  <option value="เนื้อสัตว์">เนื้อสัตว์</option>
+                  <option value="ผัก">ผัก</option>
+                  <option value="ผลไม้">ผลไม้</option>
+                </select> 
+            </div>
+
+
+          <div class="stock">
+            <div class="form-add-product">
+            <label for="floatingstock">จำนวน</label>
+            <input type="number" name="stock" class="form-control" id="floatingstock" placeholder="" required>
+            </div>
+          </div>
+
+          <div class="image">
+            <div class="form-add-product">
+              <div class="container-img">รูปภาพ</div>
+              <input type="file" accept="image/*" name="imageProduct" id="file" style="display: none">
+              <label for="file"><img src="/image/addFile.png" class="upload_icon"></label>
+
+              <!-- <input type="file" accept="image/*" name="imageProduct" class="form-control" id="imageProduct" style="display: none;">
+              <label for="file"><img src="/image/addFile.png" class="upload_icon"></label> -->
+            </div>
+          </div>
+
+          <div class="exp">
+            <div class="form-add-product">
+              <label for="image">วันหมดอายุ</label>
+            <input type="text" name="exp" class="form-control" id="floatingexp" placeholder="" required> 
+            </div>
+          </div>
+
+          <div class="clearttime">
+            <div class="form-add-product">
+              <label for="image">วันเคลียร์สินค้า</label>
+              <input type="text" name="clearTime" class="form-control" id="floatingclear" placeholder="" required> 
+            </div>
+          </div>
+        <div class="btn">
+          <button class="btn-product" type="submit">บันทึก</button>
+        </div>
+        
+    </form>
+</div>    
+  </body>
+</html>
